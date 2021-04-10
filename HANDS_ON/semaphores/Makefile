@@ -1,7 +1,0 @@
-obj-m += sema.o
-KSRC = /home/user/kernel/packages/linux-4.14.227.tar.1/linux-4.14.227
-all:
-	make -C ${KSRC} M=${PWD} modules ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
-clean:
-	make -C ${KSRC} M=${PWD} clean 
-
