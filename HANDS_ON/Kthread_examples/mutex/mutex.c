@@ -4,46 +4,17 @@
 #include <linux/semaphore.h>
 #include <linux/kthread.h>
 
- 
-
- 
-
- 
 
 static DEFINE_MUTEX (m1);
-
- 
-
- 
-
- 
 
 static struct task_struct *task1;
 static struct task_struct *task2;
 
- 
-
- 
-
- 
-
 int count=50;
 module_param(count,int,S_IRUGO);
 
- 
-
- 
-
- 
-
 //wait_queue_head_t w1;
 //wait_queue_head_t w2;
-
- 
-
- 
-
- 
 
 static int val=100;
 static int buflen=0;
