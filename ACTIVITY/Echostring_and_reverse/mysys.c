@@ -4,26 +4,26 @@
 SYSCALL_DEFINE2(mytestthree, const char __user *,ch,char __user *,gett)
 {
    char buf[50],rev[50];
-   int n,i,j;
-   int len=0;
+   int k,x,y;
+   int length=0;
    n=copy_from_user(buf,ch,50);
    if(n)
    {
       printk("copy");
       return -EFAULT;
    }
-   while(buf[len] != '\0')
-   	len++;
-   j=len-1;
+   while(buf[length] != '\0')
+   	length++;
+   y=length-1;
    
-   for(i=0;i<len;i++)
+   for(x=0;x<length;x++)
    {
-     rev[i] = buf[j];
+     rev[x] = buf[y];
     j--;
    }
-   rev[len]='\0';
-   n=copy_to_user(gett,rev,50);
-   if(n)
+   rev[length]='\0';
+   k=copy_to_user(gett,rev,50);
+   if(k)
    {
     return -EFAULT;
    }
